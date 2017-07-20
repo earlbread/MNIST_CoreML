@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TodoListViewController.swift
 //  RxSimpleTodo
 //
 //  Created by Seunghun Lee on 2017-07-17.
@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TodoListViewController: UIViewController {
+  @IBOutlet weak var tableView: UITableView!
 
   override func viewDidLoad() {
     super.viewDidLoad()

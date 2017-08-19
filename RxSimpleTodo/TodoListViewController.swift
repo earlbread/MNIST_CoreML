@@ -8,6 +8,10 @@
 
 import UIKit
 
+class TodoCell: UITableViewCell {
+  @IBOutlet weak var contentLabel: UILabel!
+}
+
 class TodoListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
 

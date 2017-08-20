@@ -14,6 +14,7 @@ class TodoCell: UITableViewCell {
 
 class TodoListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  var items = [Todo]()
 
   override func viewDidLoad() {
     super.viewDidLoad()

@@ -17,6 +17,8 @@ class TodoCell: UITableViewCell {
 
 class TodoListViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var addButton: UIBarButtonItem!
+
   var items = Variable([Todo]())
   let disposeBag = DisposeBag()
 
@@ -29,6 +31,13 @@ class TodoListViewController: UIViewController {
       .bind(to: tableView.rx.items(cellIdentifier: "TodoCell",
                                    cellType: TodoCell.self)) { (_, element, cell) in
         cell.contentLabel?.text = element.content
+      }
+      .disposed(by: disposeBag)
+
+    addButton.rx.tap
+      .asObservable()
+      .bind { [unowned self] in
+        self.present(AddTodoViewController.instance, animated: true)
       }
       .disposed(by: disposeBag)
   }

@@ -59,8 +59,11 @@
                             <constraint firstAttribute="trailing" secondItem="f39-ha-xAs" secondAttribute="trailing" id="zdb-0X-21e"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Todo List" id="kqv-TX-1SD"/>
+                    <navigationItem key="navigationItem" title="Todo List" id="kqv-TX-1SD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="XOO-af-kCi"/>
+                    </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="XOO-af-kCi" id="qiH-fO-LtC"/>
                         <outlet property="tableView" destination="f39-ha-xAs" id="KHL-76-uAl"/>
                     </connections>
                 </viewController>

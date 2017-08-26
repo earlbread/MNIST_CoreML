@@ -69,8 +69,3 @@ print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
 save_model(model, 'mnist.h5')
-
-import coremltools
-
-coreml_model = coremltools.converters.keras.convert(model)
-coreml_model.save('mnist.mlmodel')

@@ -20,19 +20,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hJj-4w-Sol">
                                 <rect key="frame" x="47" y="70" width="280" height="330"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-ev-uqx">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-ev-uqx" customClass="DrawView" customModule="MNIST_CoreML" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EUR-SY-pki">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GnF-Z6-sPe">
-                                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="280" id="3bs-os-6RM"/>
                                             <constraint firstAttribute="width" constant="280" id="rmG-yg-8XM"/>
@@ -51,6 +41,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jl-bb-Ck2">
                                                 <rect key="frame" x="155" y="0.0" width="125" height="30"/>
                                                 <state key="normal" title="Predict"/>
+                                                <connections>
+                                                    <action selector="predictNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vBJ-8g-kj7"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -65,9 +58,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="canvasView" destination="RZA-ev-uqx" id="MVw-Pu-xsi"/>
-                        <outlet property="mainImageView" destination="GnF-Z6-sPe" id="snL-50-hE1"/>
-                        <outlet property="tempImageView" destination="EUR-SY-pki" id="KNP-hr-NRu"/>
+                        <outlet property="drawView" destination="RZA-ev-uqx" id="mPA-n8-HjZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

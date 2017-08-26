@@ -17,34 +17,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hJj-4w-Sol">
-                                <rect key="frame" x="47" y="70" width="280" height="330"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZCN-5Z-awu">
+                                <rect key="frame" x="47" y="70" width="280" height="411"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-ev-uqx" customClass="DrawView" customModule="MNIST_CoreML" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="280" id="3bs-os-6RM"/>
-                                            <constraint firstAttribute="width" constant="280" id="rmG-yg-8XM"/>
-                                        </constraints>
-                                    </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-2l-6qv">
-                                        <rect key="frame" x="0.0" y="300" width="280" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hJj-4w-Sol">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="330"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-uv-Uok">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
-                                                <state key="normal" title="Reset"/>
-                                                <connections>
-                                                    <action selector="resetCanvas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jQH-MC-3ch"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jl-bb-Ck2">
-                                                <rect key="frame" x="155" y="0.0" width="125" height="30"/>
-                                                <state key="normal" title="Predict"/>
-                                                <connections>
-                                                    <action selector="predictNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vBJ-8g-kj7"/>
-                                                </connections>
-                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZA-ev-uqx" customClass="DrawView" customModule="MNIST_CoreML" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="280" id="3bs-os-6RM"/>
+                                                    <constraint firstAttribute="width" constant="280" id="rmG-yg-8XM"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bH6-2l-6qv">
+                                                <rect key="frame" x="0.0" y="300" width="280" height="30"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiq-uv-Uok">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="30"/>
+                                                        <state key="normal" title="Reset"/>
+                                                        <connections>
+                                                            <action selector="resetCanvas:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jQH-MC-3ch"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4jl-bb-Ck2">
+                                                        <rect key="frame" x="155" y="0.0" width="125" height="30"/>
+                                                        <state key="normal" title="Predict"/>
+                                                        <connections>
+                                                            <action selector="predictNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vBJ-8g-kj7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="v68-Ek-x09">
+                                        <rect key="frame" x="0.0" y="350" width="280" height="61"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prediction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TfX-9u-QeF">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confidence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJG-4X-vKe">
+                                                <rect key="frame" x="0.0" y="40.5" width="280" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -52,13 +74,15 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hJj-4w-Sol" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b9g-63-Sea"/>
-                            <constraint firstItem="hJj-4w-Sol" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="wcJ-GF-Mdu"/>
+                            <constraint firstItem="ZCN-5Z-awu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Rx-wO-g90"/>
+                            <constraint firstItem="ZCN-5Z-awu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="82A-Qz-vSr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="confidenceLabel" destination="EJG-4X-vKe" id="g94-tM-UGW"/>
                         <outlet property="drawView" destination="RZA-ev-uqx" id="mPA-n8-HjZ"/>
+                        <outlet property="predictionLabel" destination="TfX-9u-QeF" id="E1n-ba-ddT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

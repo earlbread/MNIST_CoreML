@@ -14,6 +14,8 @@ class ViewController: UIViewController {
   @IBOutlet weak var drawView: DrawView!
   @IBOutlet weak var predictionLabel: UILabel!
   @IBOutlet weak var confidenceLabel: UILabel!
+
+  let model = mnist()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,6 +30,29 @@ class ViewController: UIViewController {
   }
 
   @IBAction func predictNumber(_ sender: UIButton) {
+    let context = drawView.getViewContext()
+    guard let image = context?.makeImage() else {
+      return
+    }
+
+
+
+    func resultHandler(request: VNRequest, error: Error?) {
+      guard let results = request.results as? [VNClassificationObservation]
+        else { fatalError("huh") }
+
+      if let prediction = results.first {
+        DispatchQueue.main.async {
+          self.predictionLabel.text = "The number is \(prediction.identifier)"
+          self.confidenceLabel.text = "Confidence = \(prediction.confidence)"
+        }
+      }
+    }
+    let vnmodel = try! VNCoreMLModel(for: model.model)
+    let request = VNCoreMLRequest(model: vnmodel, completionHandler: resultHandler)
+    let handler = VNImageRequestHandler(cgImage: image)
+    try! handler.perform([request])
+
     showLabels()
   }
 
